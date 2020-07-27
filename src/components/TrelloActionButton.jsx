@@ -69,7 +69,8 @@ class TrelloActionButton extends Component {
           ...styles.openFormButtonGroup,
           opacity: buttonTextOpacity,
           color: buttonTextColor,
-          backgroundColor: buttonTextBackground
+          backgroundColor: buttonTextBackground,
+          fontFamily: "Roboto"
         }}
       >
         <Icon>add</Icon>
@@ -116,7 +117,7 @@ class TrelloActionButton extends Component {
             // onMouseDown fires before the onBlur prop in TextArea 
             onMouseDown={ list ? this.handleAddList : this.handleAddCard} 
             variant="contained" 
-            style={{color: "white", backgroundColor: "#5aac44"}}
+            style={{color: "white", backgroundColor: "#5aac44", fontFamily: "Roboto"}}
           >
             {buttonTitle} {" "}
           </Button>
@@ -146,7 +147,7 @@ const styles = {
   formButtonGroup: {
     marginTop: 8,
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   }
 }
  

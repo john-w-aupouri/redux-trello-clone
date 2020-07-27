@@ -40,7 +40,7 @@ class App extends Component {
 
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <h2>Redux Trello Clone</h2>
+        <h2 style={{fontFamily: "Roboto"}}>Redux Trello Clone</h2>
         <Droppable droppableId="all-lists" direction="horizontal" type="list">
           {provided => (
             <ListContainer {...provided.droppableProps} ref={provided.innerRef}>

@@ -1,40 +1,23 @@
 import { CONSTANTS } from '../actions'
 
 let listID = 2
-let cardID = 4
+let cardID = 0
 
 const initialState = [
   {
-    title: 'static data',
+    title: 'Todos',
     id: `list-${0}`,
-    cards: [
-      {
-        id: `card-${0}`,
-        text: 'first card'
-      },
-      {
-        id: `card-${1}`,
-        text: 'second card'
-      },   
-    ]
+    cards: []
   },
   {
-    title: 'static data',
+    title: 'In Progress',
     id: `list-${1}`,
-    cards: [
-      {
-        id: `card-${0}`,
-        text: 'second list first card'
-      },
-      {
-        id: `card-${1}`,
-        text: 'second list second card'
-      },
-      {
-        id: `card-${2}`,
-        text: 'second list third card'
-      },    
-    ]
+    cards: []
+  },
+  {
+    title: 'Completed',
+    id: `list-${2}`,
+    cards: []
   }
 ]
 
