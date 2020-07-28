@@ -19,6 +19,7 @@ class TrelloActionButton extends Component {
   }
 
   closeForm = e => {
+    console.log('working')
     this.setState({
       formOpen: false
     })
@@ -34,6 +35,7 @@ class TrelloActionButton extends Component {
     const { dispatch } = this.props
     const { text } = this.state
 
+    // only if there is text then dispatch action
     if(text) {
       this.setState({
         text: ""
@@ -48,9 +50,13 @@ class TrelloActionButton extends Component {
     const { dispatch, listID } = this.props
     const { text } = this.state
 
+    // if there is text then dispatch action
     if(text) {
       dispatch(addCard(listID, text))
     }
+
+    // reset to blank input
+    this.setState({ text: "" })
   }
   
   // decide which is a list and which is a card
@@ -121,9 +127,7 @@ class TrelloActionButton extends Component {
           >
             {buttonTitle} {" "}
           </Button>
-          <Icon style={{ marginLeft: 8, cursor: "pointer" }}>
-            close
-          </Icon>
+          <Icon style={{ marginLeft: 8, cursor: "pointer" }}>close</Icon>
         </div>
       </div>
     )

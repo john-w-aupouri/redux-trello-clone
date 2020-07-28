@@ -1,13 +1,26 @@
 import { CONSTANTS } from '../actions'
 
-let listID = 2
-let cardID = 0
+let listID = 4
+let cardID = 3
 
 const initialState = [
   {
     title: 'Todos',
     id: `list-${0}`,
-    cards: []
+    cards: [
+      // {
+      //   id: `card-${0}`,
+      //   text: "style 3 dots drop down menu"
+      // },
+      // {
+      //   id: `card-${1}`,
+      //   text: "make cards editable"
+      // },
+      // {
+      //   id: `card-${2}`,
+      //   text: "make list title editable"
+      // }
+    ]
   },
   {
     title: 'In Progress',
