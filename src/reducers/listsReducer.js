@@ -1,7 +1,7 @@
 import { CONSTANTS } from '../actions'
 
 let listID = 4
-let cardID = 3
+let cardID = 14
 
 const initialState = [
   {
@@ -10,32 +10,80 @@ const initialState = [
     cards: [
       // {
       //   id: `card-${0}`,
-      //   text: "style 3 dots drop down menu"
+      //   text: "this project - style 3 dots drop down menu"
       // },
       // {
       //   id: `card-${1}`,
-      //   text: "make cards editable"
+      //   text: "this project - make cards editable"
       // },
       // {
       //   id: `card-${2}`,
-      //   text: "make list title editable"
+      //   text: "this project - make list title editable"
+      // },
+      // {
+      //   id: `card-${3}`,
+      //   text: "portfolio - implement page transtions"
+      // },
+      // {
+      //   id: `card-${4}`,
+      //   text: "portfolio - stlying, ensure is responsive"
+      // },
+      // {
+      //   id: `card-${5}`,
+      //   text: "my-blog - deploy via heroku"
       // }
     ]
   },
   {
     title: 'In Progress',
     id: `list-${1}`,
-    cards: []
+    cards: [
+      // {
+      //   id: `card-${6}`,
+      //   text: "Becoming a MEAN-Stack Developer Learning Path"
+      // },
+      // {
+      //   id: `card-${7}`,
+      //   text: "Becoming a Web Developer Learning Path"
+      // },
+      // {
+      //   id: `card-${8}`,
+      //   text: "my-blog - styling"
+      // }  
+    ]
   },
   {
     title: 'Completed',
     id: `list-${2}`,
-    cards: []
+    cards: [
+      // {
+      //   id: `card-${9}`,
+      //   text: "portolio - contact form emailjs"
+      // },
+      // {
+      //   id: `card-${10}`,
+      //   text: "my-blog - connect front and back ends"
+      // },
+      // {
+      //   id: `card-${11}`,
+      //   text: "Become a NodeJS Developer Learning Path"
+      // },
+      // {
+      //   id: `card-${12}`,
+      //   text: "Become a React Devloper Learning Path"
+      // },
+      // {
+      //   id: `card-${13}`,
+      //   text: "Become a MERN-Stack Devloper Learning Path"
+      // },
+    ]
   }
 ]
 
+// reducers a funtion that take in an action producing a new state
 const listsReducer = (state = initialState, action) => {
   switch (action.type) {
+    // add new list
     case CONSTANTS.ADD_LIST:
       const newList = {
         title: action.payload,
@@ -45,6 +93,7 @@ const listsReducer = (state = initialState, action) => {
       listID += 1
       return [...state, newList]
     
+    // add new card
     case CONSTANTS.ADD_CARD: {
       const newCard = {
         text: action.payload.text,
@@ -65,6 +114,8 @@ const listsReducer = (state = initialState, action) => {
 
       return newState
     }
+    
+    // for dragging
     case CONSTANTS.DRAG_HAPPENED:
       const {
         droppableIdStart,
